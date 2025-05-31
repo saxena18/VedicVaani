@@ -1,0 +1,145 @@
+ @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Merienda', cursive;
+            background: linear-gradient(120deg, #3e1f08, #1f0c06, #2d160b);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            color: #fbeec1;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #ffd699;
+            margin-bottom: 25px;
+            animation: fadeInDrop 1.5s ease-in-out forwards;
+            z-index: 2;
+        }
+
+        button {
+            background: #ffb347;
+            color: #2e1306;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 204, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInRise 2s ease-in-out forwards;
+            z-index: 2;
+        }
+
+        button:hover {
+            background: #ffd699;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 204, 102, 0.6);
+        }
+
+        #audio {
+            display: none;
+        }
+
+        @keyframes fadeInDrop {
+            0% {
+                opacity: 0;
+                transform: translateY(-60px) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInRise {
+            0% {
+                opacity: 0;
+                transform: translateY(60px) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating Om animation */
+
+        .om-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .om {
+            position: absolute;
+            bottom: -100px;
+            font-size: 2.5rem;
+            color: rgba(239, 236, 230, 0.1);
+            animation: floatOm 5s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes floatOm {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .om {
+                font-size: 1.5rem;
+            }
+        }
